@@ -55,7 +55,7 @@ function TodoList() {
   };
 
   const handleDeleteTodo = (id:any) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo:any) => todo.id !== id));
   };
 
   if (loading) {
