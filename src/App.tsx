@@ -1,5 +1,4 @@
-// TodoList.js
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import {
   GlobalStyle,
   Container,
@@ -37,15 +36,15 @@ function TodoList() {
       });
   }, []);
 
-  const handleNewTodoChange = (event) => {
+  const handleNewTodoChange = (event:any) => {
     setNewTodoTitle(event.target.value);
   };
 
-  const handleNewTodoSubmit = (event) => {
+  const handleNewTodoSubmit = (event:any) => {
     event.preventDefault();
     if (newTodoTitle.trim() === '') return;
 
-    const newTodo = {
+    const newTodo:any = {
       id: todos.length + 1,
       title: newTodoTitle,
       completed: false,
@@ -55,7 +54,7 @@ function TodoList() {
     setNewTodoTitle('');
   };
 
-  const handleDeleteTodo = (id) => {
+  const handleDeleteTodo = (id:any) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
@@ -82,7 +81,7 @@ function TodoList() {
           <NewTodoButton type="submit">Add Todo</NewTodoButton>
         </NewTodoForm>
         <TodoListStyled>
-          {todos.map((todo) => (
+          {todos.map((todo:any) => (
             <TodoItem key={todo.id}>
               <TodoText>{todo.title}</TodoText>
               <TodoStatus completed={todo.completed}>
