@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -147,7 +147,7 @@ function TodoList() {
     event.preventDefault();
     if (newTodoTitle.trim() === '') return;
 
-    const newTodo = {
+    const newTodo:any = {
       id: todos.length + 1,
       title: newTodoTitle,
       completed: false,
@@ -158,7 +158,7 @@ function TodoList() {
   };
 
   const handleDeleteTodo = (id:any) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo:any) => todo.id !== id));
   };
 
   if (loading) {
